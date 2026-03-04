@@ -1,475 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamBeds - Sua Loja de Camas</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EGV Camas Box Ltda - Comércio de camas box e colchões em São Paulo.">
+<title>EGV Camas Box Ltda | Camas e Colchões</title>
 
-        body {
-            background-color: #f8f9fa;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .logo span {
-            color: #ffd700;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffd700;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="%23444"/><circle cx="50" cy="50" r="20" fill="%23666"/></svg>');
-            background-size: cover;
-            background-position: center;
-            height: 600px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            margin-top: 70px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: #ffd700;
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(255,215,0,0.4);
-        }
-
-        /* Products Section */
-        .products {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #666;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .product-image {
-            height: 250px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-info h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .product-info p {
-            color: #666;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .price {
-            font-size: 24px;
-            color: #667eea;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .btn-buy {
-            display: block;
-            text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 5px;
-            transition: opacity 0.3s;
-        }
-
-        .btn-buy:hover {
-            opacity: 0.9;
-        }
-
-        /* Features Section */
-        .features {
-            background: white;
-            padding: 60px 0;
-        }
-
-        .features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .feature {
-            text-align: center;
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            font-size: 30px;
-        }
-
-        .feature h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .feature p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            padding: 40px 0 20px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 20px;
-            color: #ffd700;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: #ffd700;
-        }
-
-        .copyright {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            color: #ccc;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                gap: 15px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+    color: #333;
+}
+header {
+    background: #002b5c;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+nav {
+    background: #004aad;
+    padding: 12px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.08);
+}
+h2 {
+    border-bottom: 2px solid #004aad;
+    padding-bottom: 5px;
+}
+.product {
+    margin-bottom: 20px;
+}
+footer {
+    background: #eaeaea;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+small {
+    color: #666;
+}
+@media(max-width:600px){
+    nav a{
+        display:block;
+        margin:8px 0;
+    }
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo">Dream<span>Beds</span></div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>O Sono dos Sonhos Começa Aqui</h1>
-            <p>Descubra a coleção de camas mais confortável e elegante do mercado. Qualidade premium para suas noites de descanso.</p>
-            <a href="#produtos" class="btn">Ver Coleção</a>
-        </div>
-    </section>
+<header>
+    <h1>EGV Camas Box Ltda</h1>
+    <p>CNPJ: 57.023.052/0001-09</p>
+</header>
 
-    <section class="products" id="produtos">
-        <div class="section-title">
-            <h2>Nossas Camas</h2>
-            <p>Escolha o modelo perfeito para seu conforto</p>
-        </div>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-image">Cama Box Solteiro</div>
-                <div class="product-info">
-                    <h3>Cama Box Solteiro</h3>
-                    <p>Perfeita para quartos compactos, com design moderno e conforto excepcional.</p>
-                    <div class="price">R$ 899,90</div>
-                    <a href="#" class="btn-buy">Comprar</a>
-                </div>
-            </div>
+<nav>
+    <a href="#empresa">Empresa</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#contato">Contato</a>
+    <a href="#privacidade">Privacidade</a>
+    <a href="#termos">Termos</a>
+</nav>
 
-            <div class="product-card">
-                <div class="product-image">Cama Box Casal</div>
-                <div class="product-info">
-                    <h3>Cama Box Casal</h3>
-                    <p>Espaço ideal para casais, com estrutura reforçada e acabamento premium.</p>
-                    <div class="price">R$ 1.299,90</div>
-                    <a href="#" class="btn-buy">Comprar</a>
-                </div>
-            </div>
+<div class="container" id="empresa">
+<h2>Sobre a Empresa</h2>
+<p>
+A EGV Camas Box Ltda atua no comércio de camas box, colchões e acessórios para descanso.
+Nosso compromisso é oferecer produtos com qualidade, conforto e durabilidade.
+</p>
 
-            <div class="product-card">
-                <div class="product-image">Cama Box Queen</div>
-                <div class="product-info">
-                    <h3>Cama Box Queen Size</h3>
-                    <p>Máximo conforto com dimensões generosas para noites de sono perfeitas.</p>
-                    <div class="price">R$ 1.899,90</div>
-                    <a href="#" class="btn-buy">Comprar</a>
-                </div>
-            </div>
+<p><strong>Razão Social:</strong> EGV Camas Box Ltda<br>
+<strong>CNPJ:</strong> 57.023.052/0001-09<br>
+<strong>Endereço:</strong> Rua Henrique Lobo, 88 – Jardim Rodolfo Pirani – São Paulo/SP – CEP 08.310-220 – Brasil<br>
+<strong>Telefone:</strong> (11) 99904-1442<br>
+<strong>Atendimento:</strong> Segunda a Sexta das 08h às 18h
+</p>
+</div>
 
-            <div class="product-card">
-                <div class="product-image">Cama Box King</div>
-                <div class="product-info">
-                    <h3>Cama Box King Size</h3>
-                    <p>O ápice do luxo e conforto, com espaço extra para toda a família.</p>
-                    <div class="price">R$ 2.499,90</div>
-                    <a href="#" class="btn-buy">Comprar</a>
-                </div>
-            </div>
+<div class="container" id="produtos">
+<h2>Nossos Produtos</h2>
 
-            <div class="product-card">
-                <div class="product-image">Cama Infantil</div>
-                <div class="product-info">
-                    <h3>Cama Infantil</h3>
-                    <p>Design lúdico e seguro para o quarto das crianças, com proteções laterais.</p>
-                    <div class="price">R$ 1.099,90</div>
-                    <a href="#" class="btn-buy">Comprar</a>
-                </div>
-            </div>
+<div class="product">
+<h3>Cama Box Casal</h3>
+<ul>
+<li>Estrutura em madeira tratada</li>
+<li>Revestimento suede</li>
+<li>Suporte até 120kg por pessoa</li>
+<li>Medidas: 138x188 cm</li>
+</ul>
+</div>
 
-            <div class="product-card">
-                <div class="product-image">Cama Sofá</div>
-                <div class="product-info">
-                    <h3>Cama Sofá</h3>
-                    <p>Versatilidade para seu espaço, funcionando como sofá durante o dia e cama à noite.</p>
-                    <div class="price">R$ 1.599,90</div>
-                    <a href="#" class="btn-buy">Comprar</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="product">
+<h3>Cama Box Queen</h3>
+<ul>
+<li>Base reforçada bipartida</li>
+<li>Revestimento premium</li>
+<li>Alta durabilidade</li>
+<li>Medidas: 158x198 cm</li>
+</ul>
+</div>
 
-    <section class="features">
-        <div class="features-container">
-            <div class="feature">
-                <div class="feature-icon">😴</div>
-                <h3>Conforto Premium</h3>
-                <p>Materiais de alta qualidade para noites de sono perfeitas</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🔨</div>
-                <h3>Durabilidade</h3>
-                <p>Estrutura reforçada para anos de uso</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🚚</div>
-                <h3>Entrega Rápida</h3>
-                <p>Montamos sua cama sem custo adicional</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">💳</div>
-                <h3>Até 12x sem juros</h3>
-                <p>Parcele suas compras no cartão</p>
-            </div>
-        </div>
-    </section>
+<div class="product">
+<h3>Colchão Espuma D33</h3>
+<ul>
+<li>Densidade certificada D33</li>
+<li>Tecido antiácaro</li>
+<li>Altura 20 cm</li>
+<li>Indicado até 100kg</li>
+</ul>
+</div>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>DreamBeds</h3>
-                <p>Sua loja especializada em camas e conforto. Qualidade e tradição desde 2010.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contato</h3>
-                <ul>
-                    <li>📞 (11) 99999-9999</li>
-                    <li>✉️ contato@dreambeds.com</li>
-                    <li>📍 São Paulo, SP</li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2024 DreamBeds - Todos os direitos reservados</p>
-        </div>
-    </footer>
+</div>
+
+<div class="container" id="contato">
+<h2>Contato</h2>
+<p>
+Telefone: (11) 99904-1442<br>
+Endereço: Rua Henrique Lobo, 88 – São Paulo/SP<br>
+Horário de Atendimento: Segunda a Sexta das 08h às 18h
+</p>
+</div>
+
+<div class="container" id="privacidade">
+<h2>Política de Privacidade</h2>
+<p>
+A EGV Camas Box Ltda respeita a privacidade de seus clientes e visitantes.
+Coletamos apenas informações necessárias para atendimento, contato e melhoria dos serviços.
+</p>
+
+<p>
+Os dados fornecidos não são vendidos ou compartilhados com terceiros, exceto quando exigido por lei.
+</p>
+
+<p>
+Nos termos da Lei Geral de Proteção de Dados (Lei nº 13.709/2018 – LGPD), o titular dos dados pode solicitar atualização, correção ou exclusão mediante contato pelo telefone informado.
+</p>
+
+</div>
+
+<div class="container" id="termos">
+<h2>Termos e Condições</h2>
+
+<p>
+Ao utilizar este site, o usuário concorda com as condições aqui descritas.
+As informações apresentadas possuem caráter informativo e podem ser atualizadas sem aviso prévio.
+</p>
+
+<h3>Política de Troca e Devolução</h3>
+<p>
+Trocas podem ser solicitadas conforme o Código de Defesa do Consumidor.
+Em caso de defeito de fabricação, o cliente poderá entrar em contato pelo telefone informado.
+</p>
+
+<h3>Garantia</h3>
+<p>
+Os produtos possuem garantia contra defeitos de fabricação conforme especificação do fabricante.
+</p>
+
+</div>
+
+<footer>
+<strong>EGV Camas Box Ltda</strong><br>
+CNPJ: 57.023.052/0001-09<br>
+Rua Henrique Lobo, 88 – Jardim Rodolfo Pirani – São Paulo/SP – CEP 08.310-220<br>
+Telefone: (11) 99904-1442<br><br>
+<small>© 2026 EGV Camas Box Ltda – Todos os direitos reservados.</small>
+</footer>
+
 </body>
 </html>
