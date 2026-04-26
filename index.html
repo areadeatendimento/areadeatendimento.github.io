@@ -1,889 +1,606 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Paschoalotto - Serviços Financeiros</title>
-	
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17980554633"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Central de Atendimento | Boletos e Contratos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	  gtag('config', 'AW-17980554633');
-	</script>
-	
-	<!-- Event snippet for Clique no Whatsapp conversion page -->
-	<script>
-	function gtag_report_conversion(url) {
-	  var callback = function () {
-	    if (typeof(url) != 'undefined') {
-	      window.location = url;
-	    }
-	  };
-	  gtag('event', 'conversion', {
-	      'send_to': 'AW-17980554633/kEhzCLDTp5AcEIn75f1C',
-	      'value': 1.0,
-	      'currency': 'BRL',
-	      'event_callback': callback
-	  });
-	  return false;
-	}
-	</script>
-	
-	<!-- Font Awesome para ícones -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			font-family: 'Inter', sans-serif;
-		}
-		
-		body {
-			background-color: #f5f7fa;
-			color: #333;
-			line-height: 1.6;
-		}
-		
-		.container {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 0 20px;
-		}
-		
-		/* Header */
-		header {
-			background: linear-gradient(135deg, #0051FA 0%, #003bb5 100%);
-			color: white;
-			padding: 15px 0;
-			box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-		}
-		
-		.header-content {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			flex-wrap: wrap;
-			gap: 20px;
-		}
-		
-		.logo-area {
-			display: flex;
-			align-items: center;
-		}
-		
-		.logo-real {
-			max-height: 60px;
-			width: auto;
-			filter: brightness(0) invert(1);
-		}
-		
-		.company-info {
-			display: flex;
-			gap: 20px;
-			flex-wrap: wrap;
-		}
-		
-		.info-item {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			background: rgba(255,255,255,0.1);
-			padding: 8px 15px;
-			border-radius: 50px;
-			backdrop-filter: blur(5px);
-		}
-		
-		.info-item i {
-			font-size: 16px;
-			opacity: 0.9;
-		}
-		
-		.info-item span {
-			font-size: 14px;
-			font-weight: 500;
-		}
-		
-		/* Hero Section */
-		.hero {
-			background-image: url('https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/home/banner-home-1.webp');
-			background-size: cover;
-			background-position: center;
-			color: white;
-			padding: 120px 0;
-			text-align: center;
-			position: relative;
-		}
-		
-		.hero::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: rgba(0, 0, 0, 0.5);
-			z-index: 1;
-		}
-		
-		.hero .container {
-			position: relative;
-			z-index: 2;
-		}
-		
-		.hero h2 {
-			font-size: 48px;
-			font-weight: 800;
-			margin-bottom: 20px;
-			text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-		}
-		
-		.hero p {
-			font-size: 20px;
-			max-width: 700px;
-			margin: 0 auto 30px;
-			opacity: 0.95;
-			text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-		}
-		
-		.btn-atendimento {
-			display: inline-block;
-			padding: 15px 50px;
-			background-color: transparent;
-			color: #0051FA;
-			text-decoration: none;
-			border-radius: 50px;
-			font-weight: 700;
-			font-size: 20px;
-			transition: all 0.3s ease;
-			border: 2px solid #0051FA;
-			cursor: pointer;
-			background-color: white;
-			box-shadow: 0 4px 15px rgba(0, 81, 250, 0.2);
-		}
-		
-		.btn-atendimento:hover {
-			background-color: #0051FA;
-			color: white;
-			transform: translateY(-2px);
-			box-shadow: 0 6px 20px rgba(0, 81, 250, 0.3);
-		}
-		
-		/* Seção Serviços */
-		.services {
-			padding: 80px 0;
-			background-color: white;
-		}
-		
-		.section-title {
-			text-align: center;
-			margin-bottom: 60px;
-		}
-		
-		.section-title h2 {
-			font-size: 36px;
-			color: #0051FA;
-			font-weight: 700;
-			margin-bottom: 15px;
-		}
-		
-		.section-title p {
-			font-size: 18px;
-			color: #666;
-			max-width: 600px;
-			margin: 0 auto;
-		}
-		
-		.services-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			gap: 30px;
-		}
-		
-		.service-card {
-			background: #f8faff;
-			padding: 40px 30px;
-			border-radius: 20px;
-			text-align: center;
-			transition: all 0.3s ease;
-			border: 1px solid #eef2f6;
-		}
-		
-		.service-card:hover {
-			transform: translateY(-10px);
-			box-shadow: 0 20px 40px rgba(0, 81, 250, 0.1);
-			border-color: #0051FA;
-		}
-		
-		.service-icon {
-			width: 80px;
-			height: 80px;
-			background: linear-gradient(135deg, #0051FA 0%, #003bb5 100%);
-			border-radius: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin: 0 auto 25px;
-			color: white;
-			font-size: 32px;
-		}
-		
-		.service-card h3 {
-			font-size: 22px;
-			color: #333;
-			margin-bottom: 15px;
-			font-weight: 700;
-		}
-		
-		.service-card p {
-			color: #666;
-			font-size: 15px;
-			line-height: 1.6;
-		}
-		
-		.service-link {
-			display: inline-block;
-			margin-top: 20px;
-			color: #0051FA;
-			text-decoration: none;
-			font-weight: 600;
-			font-size: 14px;
-			transition: color 0.3s ease;
-			cursor: pointer;
-		}
-		
-		.service-link:hover {
-			color: #003bb5;
-		}
-		
-		.service-link i {
-			margin-left: 5px;
-			font-size: 12px;
-		}
-		
-		/* Seção Depoimentos */
-		.testimonials {
-			padding: 80px 0;
-			background: linear-gradient(135deg, #f0f4ff 0%, #e6ecfe 100%);
-		}
-		
-		.testimonials-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			gap: 30px;
-			margin-top: 40px;
-		}
-		
-		.testimonial-card {
-			background: white;
-			padding: 35px;
-			border-radius: 20px;
-			box-shadow: 0 10px 30px rgba(0, 81, 250, 0.1);
-			transition: all 0.3s ease;
-			position: relative;
-		}
-		
-		.testimonial-card:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 20px 40px rgba(0, 81, 250, 0.15);
-		}
-		
-		.testimonial-card i.fa-quote-left {
-			color: #0051FA;
-			font-size: 24px;
-			opacity: 0.3;
-			position: absolute;
-			top: 20px;
-			left: 20px;
-		}
-		
-		.testimonial-card i.fa-quote-right {
-			color: #0051FA;
-			font-size: 24px;
-			opacity: 0.3;
-			position: absolute;
-			bottom: 20px;
-			right: 20px;
-		}
-		
-		.testimonial-text {
-			font-size: 16px;
-			color: #555;
-			line-height: 1.8;
-			margin-bottom: 25px;
-			padding: 0 15px;
-			position: relative;
-			z-index: 1;
-		}
-		
-		.testimonial-author {
-			display: flex;
-			align-items: center;
-			gap: 15px;
-			border-top: 1px solid #eef2f6;
-			padding-top: 20px;
-		}
-		
-		.author-avatar {
-			width: 50px;
-			height: 50px;
-			background: linear-gradient(135deg, #0051FA 0%, #003bb5 100%);
-			border-radius: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: white;
-			font-size: 20px;
-			font-weight: 600;
-		}
-		
-		.author-info h4 {
-			font-size: 18px;
-			color: #333;
-			margin-bottom: 5px;
-			font-weight: 600;
-		}
-		
-		.author-info p {
-			font-size: 14px;
-			color: #666;
-		}
-		
-		/* Seção História */
-		.history {
-			padding: 80px 0;
-			background: linear-gradient(135deg, #f5f7fa 0%, #eef2f6 100%);
-		}
-		
-		.history-content {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 50px;
-			align-items: center;
-		}
-		
-		.history-text h2 {
-			font-size: 36px;
-			color: #0051FA;
-			font-weight: 700;
-			margin-bottom: 25px;
-		}
-		
-		.history-text p {
-			font-size: 16px;
-			color: #555;
-			margin-bottom: 20px;
-			line-height: 1.8;
-		}
-		
-		.history-stats {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 20px;
-			margin-top: 40px;
-		}
-		
-		.stat-item {
-			text-align: center;
-		}
-		
-		.stat-number {
-			font-size: 36px;
-			font-weight: 800;
-			color: #0051FA;
-			margin-bottom: 5px;
-		}
-		
-		.stat-label {
-			font-size: 14px;
-			color: #666;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-		}
-		
-		.history-image {
-			background: linear-gradient(135deg, #0051FA 0%, #003bb5 100%);
-			border-radius: 30px;
-			padding: 40px;
-			color: white;
-			height: 100%;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-		}
-		
-		.history-image h3 {
-			font-size: 28px;
-			margin-bottom: 20px;
-			font-weight: 700;
-		}
-		
-		.history-image p {
-			font-size: 16px;
-			opacity: 0.9;
-			margin-bottom: 20px;
-			line-height: 1.8;
-		}
-		
-		.history-image i {
-			font-size: 48px;
-			opacity: 0.5;
-			margin-top: 20px;
-		}
-		
-		/* Contato e Informações */
-		.contact-info {
-			padding: 60px 0;
-			background-color: white;
-		}
-		
-		.info-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			gap: 40px;
-		}
-		
-		.info-block {
-			padding: 30px;
-			background: #f8faff;
-			border-radius: 20px;
-			border: 1px solid #eef2f6;
-		}
-		
-		.info-block h3 {
-			font-size: 22px;
-			color: #0051FA;
-			margin-bottom: 20px;
-			display: flex;
-			align-items: center;
-			gap: 10px;
-		}
-		
-		.info-block h3 i {
-			font-size: 24px;
-		}
-		
-		.info-detail {
-			margin-bottom: 15px;
-			padding-bottom: 15px;
-			border-bottom: 1px solid #eef2f6;
-		}
-		
-		.info-detail:last-child {
-			border-bottom: none;
-			padding-bottom: 0;
-		}
-		
-		.info-detail strong {
-			display: block;
-			color: #333;
-			margin-bottom: 5px;
-			font-size: 16px;
-		}
-		
-		.info-detail span {
-			color: #666;
-			font-size: 15px;
-			line-height: 1.6;
-		}
-		
-		.info-detail a {
-			color: #0051FA;
-			text-decoration: none;
-			font-weight: 500;
-			transition: color 0.3s ease;
-			cursor: pointer;
-		}
-		
-		.info-detail a:hover {
-			color: #003bb5;
-			text-decoration: underline;
-		}
-		
-		/* Footer */
-		footer {
-			background: #1a1a2e;
-			color: white;
-			padding: 40px 0 20px;
-		}
-		
-		.footer-content {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			flex-wrap: wrap;
-			gap: 30px;
-			margin-bottom: 30px;
-		}
-		
-		.footer-logo {
-			display: flex;
-			align-items: center;
-		}
-		
-		.footer-logo img {
-			max-height: 50px;
-			width: auto;
-			filter: brightness(0) invert(1);
-		}
-		
-		.social-links {
-			display: flex;
-			gap: 20px;
-		}
-		
-		.social-links a {
-			color: white;
-			font-size: 24px;
-			transition: color 0.3s ease;
-		}
-		
-		.social-links a:hover {
-			color: #0051FA;
-		}
-		
-		.copyright {
-			text-align: center;
-			padding-top: 30px;
-			border-top: 1px solid rgba(255,255,255,0.1);
-			font-size: 14px;
-			color: #888;
-		}
-		
-		/* Botão Flutuante WhatsApp */
-		.whatsapp-float {
-			position: fixed;
-			bottom: 40px;
-			right: 40px;
-			background-color: #5BC928;
-			color: white;
-			width: 70px;
-			height: 70px;
-			border-radius: 50%;
-			text-align: center;
-			font-size: 35px;
-			box-shadow: 0 10px 25px rgba(91, 201, 40, 0.4);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			text-decoration: none;
-			transition: all 0.3s ease;
-			z-index: 1000;
-			cursor: pointer;
-		}
-		
-		.whatsapp-float:hover {
-			background-color: #4aa820;
-			transform: scale(1.1);
-			box-shadow: 0 15px 35px rgba(91, 201, 40, 0.5);
-		}
-		
-		/* Responsividade */
-		@media (max-width: 768px) {
-			.header-content {
-				flex-direction: column;
-				text-align: center;
-			}
-			
-			.hero h2 {
-				font-size: 32px;
-			}
-			
-			.hero p {
-				font-size: 18px;
-			}
-			
-			.history-content {
-				grid-template-columns: 1fr;
-			}
-			
-			.testimonials-grid {
-				grid-template-columns: 1fr;
-			}
-			
-			.whatsapp-float {
-				width: 60px;
-				height: 60px;
-				font-size: 30px;
-				bottom: 20px;
-				right: 20px;
-			}
-		}
-	</style>
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #ffffff;
+            color: #1a2c3e;
+            line-height: 1.5;
+        }
+
+        /* cores azul institucional */
+        :root {
+            --primary-dark: #004666;
+            --primary-medium: #006494;
+            --primary-light: #eef3fc;
+            --gray-bg: #f8fafc;
+            --card-shadow: 0 12px 24px rgba(0,0,0,0.05);
+            --border-light: #e2edf2;
+        }
+
+        .o-root {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .o-main {
+            flex: 1;
+        }
+
+        /* skip link */
+        .c-skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-dark);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 100;
+            font-weight: 500;
+        }
+        .c-skip-link:focus { top: 10px; }
+
+        /* HEADER */
+        .c-header {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .o-page-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 0;
+        }
+        .support-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            letter-spacing: -0.2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .support-title span {
+            font-size: 1.7rem;
+        }
+
+        /* hero sem imagem - apenas texto */
+        .c-hero-teaser {
+            background: linear-gradient(105deg, var(--primary-dark) 0%, #002d42 100%);
+            padding: 64px 0;
+            position: relative;
+        }
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hero-content h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 32px;
+        }
+        .c-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: white;
+            color: var(--primary-dark);
+            padding: 12px 32px;
+            border-radius: 48px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .c-btn--outline-light {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+        .c-btn--outline-light:hover {
+            background: white;
+            color: var(--primary-dark);
+        }
+
+        /* seções */
+        .o-content-section {
+            padding: 64px 0;
+        }
+        .section-alt {
+            background-color: var(--gray-bg);
+        }
+        .c-section-heading {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .c-section-heading h2, .c-section-heading h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .c-section-heading p {
+            max-width: 700px;
+            margin: 12px auto 0;
+            color: #2c5a74;
+            font-size: 1.05rem;
+        }
+
+        /* cards principais */
+        .o-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+        .o-layout__item {
+            flex: 1 1 280px;
+            min-width: 260px;
+        }
+        .c-card {
+            background: white;
+            border-radius: 28px;
+            box-shadow: var(--card-shadow);
+            padding: 32px 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+            border: 1px solid var(--border-light);
+            text-align: center;
+        }
+        .c-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(0,70,102,0.15);
+        }
+        .c-card__icon {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        .c-card h4 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+        .c-card p {
+            color: #2c4e6e;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+        .c-btn--link {
+            background: none;
+            padding: 0;
+            color: var(--primary-dark);
+            font-weight: 600;
+            gap: 6px;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+        }
+        .c-btn--link:hover {
+            text-decoration: underline;
+            background: none;
+        }
+
+        /* media teaser dicas segurança */
+        .c-media-teaser {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: center;
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-light);
+        }
+        .c-media-teaser__media {
+            flex: 1;
+            min-width: 220px;
+        }
+        .c-media-teaser__media img {
+            width: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+            height: auto;
+            display: block;
+        }
+        .c-media-teaser__caption {
+            flex: 1;
+        }
+        .c-media-teaser__title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+        }
+        .media-list {
+            margin: 16px 0 0 20px;
+            color: #2c4e6e;
+        }
+        .media-list li {
+            margin: 8px 0;
+        }
+
+        /* grade de atalhos */
+        .media-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            list-style: none;
+            margin-top: 16px;
+        }
+        .media-grid__item {
+            text-align: center;
+            width: 160px;
+        }
+        .media-grid__link {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .grid-icon {
+            font-size: 2.2rem;
+            background: var(--primary-light);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            transition: 0.2s;
+        }
+        .media-grid__link:hover .grid-icon {
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        /* faq acordeão */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 20px;
+            padding: 20px 28px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-dark);
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 16px;
+            color: #2c5a74;
+            border-top: 1px solid var(--border-light);
+            padding-top: 16px;
+        }
+
+        /* contato destaque */
+        .contact-highlight {
+            background: var(--primary-light);
+            border-radius: 28px;
+            padding: 28px 32px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .contact-highlight strong {
+            color: var(--primary-dark);
+        }
+        .whatsapp-number {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            background: white;
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 60px;
+            margin-top: 12px;
+        }
+
+        /* footer */
+        .c-footer {
+            background: #f3f7fc;
+            border-top: 1px solid var(--border-light);
+            padding: 48px 0 32px;
+            margin-top: 32px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--primary-dark);
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+        .footer-col a {
+            text-decoration: none;
+            color: #2c5a74;
+            font-size: 0.9rem;
+        }
+        .footer-meta {
+            border-top: 1px solid var(--border-light);
+            padding-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #4a687e;
+        }
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 1.8rem; }
+            .c-media-teaser { flex-direction: column; padding: 24px; }
+            .o-content-section { padding: 48px 0; }
+            .media-grid__item { width: 130px; }
+            .whatsapp-number { font-size: 1.2rem; }
+        }
+
+        /* botão flutuante whatsapp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25D366;
+            color: white;
+            border-radius: 60px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            z-index: 99;
+            font-size: 0.95rem;
+        }
+        .divider-light {
+            height: 1px;
+            background: var(--border-light);
+            margin: 24px 0;
+        }
+    </style>
 </head>
 <body>
-	<!-- Header -->
-	<header>
-		<div class="container">
-			<div class="header-content">
-				<div class="logo-area">
-					<img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/logo/logo-np.webp" alt="Paschoalotto" class="logo-real" onerror="this.src='https://via.placeholder.com/150x50/0051FA/ffffff?text=Paschoalotto'">
-				</div>
-				
-				<div class="company-info">
-					<div class="info-item">
-						<i class="fas fa-building"></i>
-						<span>CNPJ: 08.939.258/0001-79</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	
-	<!-- Hero Section -->
-	<section class="hero">
-		<div class="container">
-			<h2>Facilite sua vida com a Paschoalotto</h2>
-			<p>Soluções financeiras completas para você regularizar suas pendências e conquistar a tranquilidade que merece.</p>
-			<a href="javascript:void(0);" onclick="gtag_report_conversion('https://api.whatsapp.com/send/?phone=5511921474407&text=Olá!%20Preciso%20de%20informações%20sobre%20os%20serviços%20da%20Paschoalotto.')" class="btn-atendimento">
-				ATENDIMENTO
-			</a>
-		</div>
-	</section>
-	
-	<!-- Serviços -->
-	<section class="services">
-		<div class="container">
-			<div class="section-title">
-				<h2>Nossos Serviços</h2>
-				<p>Soluções digitais e humanizadas para todas as suas necessidades financeiras</p>
-			</div>
-			
-			<div class="services-grid">
-				<div class="service-card">
-					<div class="service-icon">
-						<i class="fas fa-barcode"></i>
-					</div>
-					<h3>2ª Via de Boleto</h3>
-					<p>Emita a segunda via do seu boleto de forma rápida e fácil, sem complicação.</p>
-					<a href="javascript:void(0);" onclick="gtag_report_conversion('https://api.whatsapp.com/send/?phone=5511921474407&text=Olá!%20Preciso%20solicitar%202%C2%AA%20via%20de%20boleto.')" class="service-link">Solicitar agora <i class="fas fa-arrow-right"></i></a>
-				</div>
-				
-				<div class="service-card">
-					<div class="service-icon">
-						<i class="fas fa-handshake"></i>
-					</div>
-					<h3>Renegociação</h3>
-					<p>Negocie suas dívidas com condições especiais e parcelas que cabem no seu bolso.</p>
-					<a href="javascript:void(0);" onclick="gtag_report_conversion('https://api.whatsapp.com/send/?phone=5511921474407&text=Olá!%20Quero%20renegociar%20minhas%20dívidas.')" class="service-link">Negociar agora <i class="fas fa-arrow-right"></i></a>
-				</div>
-				
-				<div class="service-card">
-					<div class="service-icon">
-						<i class="fas fa-check-circle"></i>
-					</div>
-					<h3>Quitação de Contrato</h3>
-					<p>Quite seu contrato de forma antecipada e livre-se das pendências de uma vez.</p>
-					<a href="javascript:void(0);" onclick="gtag_report_conversion('https://api.whatsapp.com/send/?phone=5511921474407&text=Olá!%20Quero%20quitar%20meu%20contrato%20antecipadamente.')" class="service-link">Quitar agora <i class="fas fa-arrow-right"></i></a>
-				</div>
-				
-				<div class="service-card">
-					<div class="service-icon">
-						<i class="fas fa-calendar-check"></i>
-					</div>
-					<h3>Antecipação de Parcela</h3>
-					<p>Antecipe parcelas e ganhe descontos especiais em suas negociações.</p>
-					<a href="javascript:void(0);" onclick="gtag_report_conversion('https://api.whatsapp.com/send/?phone=5511921474407&text=Olá!%20Quero%20antecipar%20minhas%20parcelas.')" class="service-link">Antecipar agora <i class="fas fa-arrow-right"></i></a>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<!-- Depoimentos -->
-	<section class="testimonials">
-		<div class="container">
-			<div class="section-title">
-				<h2>O que nossos clientes dizem</h2>
-				<p>Histórias reais de pessoas que transformaram sua vida financeira com a Paschoalotto</p>
-			</div>
-			
-			<div class="testimonials-grid">
-				<div class="testimonial-card">
-					<i class="fas fa-quote-left"></i>
-					<p class="testimonial-text">"Consegui renegociar minhas dívidas de forma simples e rápida. O atendimento foi excelente e as condições caberam no meu bolso. Recomendo a todos!"</p>
-					<div class="testimonial-author">
-						<div class="author-avatar">MA</div>
-						<div class="author-info">
-							<h4>Maria Aparecida</h4>
-							<p>Cliente desde 2023</p>
-						</div>
-					</div>
-					<i class="fas fa-quote-right"></i>
-				</div>
-				
-				<div class="testimonial-card">
-					<i class="fas fa-quote-left"></i>
-					<p class="testimonial-text">"A Paschoalotto me ajudou a quitar meu contrato de forma antecipada com desconto. Processo transparente e sem burocracia. Equipe muito atenciosa!"</p>
-					<div class="testimonial-author">
-						<div class="author-avatar">JC</div>
-						<div class="author-info">
-							<h4>João Carlos</h4>
-							<p>Cliente desde 2022</p>
-						</div>
-					</div>
-					<i class="fas fa-quote-right"></i>
-				</div>
-				
-				<div class="testimonial-card">
-					<i class="fas fa-quote-left"></i>
-					<p class="testimonial-text">"Facilidade na emissão da segunda via do boleto e suporte rápido pelo WhatsApp. Resolvi tudo sem sair de casa. Empresa séria e comprometida."</p>
-					<div class="testimonial-author">
-						<div class="author-avatar">AS</div>
-						<div class="author-info">
-							<h4>Ana Silva</h4>
-							<p>Cliente desde 2024</p>
-						</div>
-					</div>
-					<i class="fas fa-quote-right"></i>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<!-- História -->
-	<section class="history">
-		<div class="container">
-			<div class="history-content">
-				<div class="history-text">
-					<h2>Nossa História</h2>
-					<p>A Paschoalotto é uma empresa de outsourcing em serviços financeiros e atendimento que há mais de duas décadas transforma experiência em resultados. Fundada em Bauru, interior de São Paulo, a empresa cresceu com solidez e se tornou referência no setor de recuperação de crédito e soluções financeiras.</p>
-					<p>Com uma abordagem humana e inovadora, a Paschoalotto desenvolveu um modelo de negócio que prioriza o relacionamento com o cliente, oferecendo soluções personalizadas e canais de atendimento acessíveis. Nosso propósito é ser parte da solução para pessoas, empresas e comunidades.</p>
-					
-					<div class="history-stats">
-						<div class="stat-item">
-							<div class="stat-number">20+</div>
-							<div class="stat-label">Anos de história</div>
-						</div>
-						<div class="stat-item">
-							<div class="stat-number">15M+</div>
-							<div class="stat-label">Clientes atendidos</div>
-						</div>
-						<div class="stat-item">
-							<div class="stat-number">5</div>
-							<div class="stat-label">Unidades no Brasil</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="history-image">
-					<i class="fas fa-quote-left"></i>
-					<h3>Transformando vidas através de soluções financeiras</h3>
-					<p>"Nossa missão é oferecer serviços que realmente façam a diferença na vida das pessoas, com transparência, respeito e inovação."</p>
-					<p style="font-weight: 600; margin-top: 20px;">- Diretoria Paschoalotto</p>
-					<i class="fas fa-quote-right" style="text-align: right; display: block;"></i>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<!-- Informações de Contato -->
-	<section class="contact-info">
-		<div class="container">
-			<div class="info-grid">
-				<div class="info-block">
-					<h3><i class="fas fa-map-marker-alt"></i> Nossas Unidades</h3>
-					
-					<div class="info-detail">
-						<strong>Bauru - Matriz</strong>
-						<span>Rua Professor Durval Guedes de Azevedo, 2-144<br>Jd. Infante Dom Henrique<br>CEP: 17012-633</span>
-					</div>
-					
-					<div class="info-detail">
-						<strong>Marília</strong>
-						<span>Rua Dr. Próspero Cecílio Coimbra, 330<br>Jardim São Gabriel<br>CEP: 17525-160</span>
-					</div>
-					
-					<div class="info-detail">
-						<strong>Agudos</strong>
-						<span>Avenida João Wolber, 295<br>Santa Angelina<br>CEP: 17120-000</span>
-					</div>
-					
-					<div class="info-detail">
-						<strong>Ribeirão Preto</strong>
-						<span>Rua Antônio Fernandes Figuerôa, 1400<br>Parque Industrial Lagoinha<br>CEP: 14095-280</span>
-					</div>
-				</div>
-				
-				<div class="info-block">
-					<h3><i class="fas fa-building"></i> Dados da Empresa</h3>
-					
-					<div class="info-detail">
-						<strong>Razão Social</strong>
-						<span>Paschoalotto Serviços Financeiros Ltda</span>
-					</div>
-					
-					<div class="info-detail">
-						<strong>CNPJ</strong>
-						<span>08.939.258/0001-79</span>
-					</div>
-					
-					<div class="info-detail">
-						<strong>Telefone / WhatsApp</strong>
-						<span><a href="javascript:void(0);" onclick="gtag_report_conversion('https://api.whatsapp.com/send/?phone=5511921474407&text=Olá!%20Preciso%20de%20informações.')">(11) 92147-4407</a></span>
-					</div>
-					
-					<div class="info-detail">
-						<strong>Horário de Atendimento</strong>
-						<span>Segunda a Sexta, das 8h às 18h</span>
-					</div>
-				</div>
-				
-				<div class="info-block">
-					<h3><i class="fas fa-shield-alt"></i> Canais de Atendimento</h3>
-					
-					<div class="info-detail">
-						<strong><i class="fab fa-whatsapp" style="color: #5BC928;"></i> WhatsApp</strong>
-						<span><a href="javascript:void(0);" onclick="gtag_report_conversion('https://api.whatsapp.com/send/?phone=5511921474407&text=Olá!%20Preciso%20de%20informações.')">(11) 92147-4407</a></span>
-					</div>
-					
-					<div class="info-detail">
-						<strong><i class="fas fa-headset"></i> Ouvidoria</strong>
-						<span><a href="javascript:void(0);" onclick="gtag_report_conversion('https://api.whatsapp.com/send/?phone=5511921474407&text=Olá!%20Preciso%20falar%20com%20a%20Ouvidoria.')">Falar com Ouvidoria</a></span>
-					</div>
-					
-					<div class="info-detail">
-						<strong><i class="fas fa-lock"></i> Canais Seguros</strong>
-						<span>Nunca solicitamos token ou senha</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<!-- Footer -->
-	<footer>
-		<div class="container">
-			<div class="footer-content">
-				<div class="footer-logo">
-					<img src="https://www.paschoalotto.com.br/wp-content/themes/paschoalotto/img/institucional/logo/logo-np.webp" alt="Paschoalotto" onerror="this.src='https://via.placeholder.com/120x40/1a1a2e/ffffff?text=Paschoalotto'">
-				</div>
-				
-				<div class="social-links">
-					<a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-					<a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-					<a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-					<a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-				</div>
-			</div>
-			
-			<div class="copyright">
-				<p>© 2026 Paschoalotto Serviços Financeiros. Todos os direitos reservados.</p>
-				<p style="margin-top: 10px; font-size: 12px;">CNPJ: 08.939.258/0001-79</p>
-			</div>
-		</div>
-	</footer>
-	
-	<!-- Botão Flutuante WhatsApp -->
-	<a href="javascript:void(0);" onclick="gtag_report_conversion('https://api.whatsapp.com/send/?phone=5511921474407&text=Olá!%20Preciso%20de%20informações%20sobre%20os%20serviços%20da%20Paschoalotto.')" class="whatsapp-float" aria-label="WhatsApp">
-		<i class="fab fa-whatsapp"></i>
-	</a>
+<div class="o-root">
+    <a href="#conteudo-principal" class="c-skip-link">Ir para o conteúdo principal</a>
+
+    <!-- Header -->
+    <header class="c-header">
+        <div class="o-page-wrap">
+            <div class="header-flex">
+                <div class="support-title">
+                    <span>📄</span> Central de Atendimento | Boletos e Contratos
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero sem imagem - apenas texto centralizado -->
+    <section class="c-hero-teaser">
+        <div class="o-page-wrap">
+            <div class="hero-content">
+                <h1>Serviços financeiros e regularização de contratos</h1>
+                <p>Emita segunda via de boletos, regularize parcelas em atraso ou solicite quitação de contrato de forma simples e segura.</p>
+                <a href="https://wa.me/5511961461174" class="c-btn" target="_blank" rel="noopener">Atendimento via WhatsApp →</a>
+            </div>
+        </div>
+    </section>
+
+    <main id="conteudo-principal" class="o-main">
+        
+        <!-- Cards principais: 2ª via, Regularização, Quitação -->
+        <section class="o-content-section">
+            <div class="o-page-wrap">
+                <div class="c-section-heading">
+                    <h2>Principais serviços</h2>
+                    <p>Resolva suas pendências financeiras com agilidade</p>
+                </div>
+                <div class="o-layout">
+                    <!-- 2ª via de boleto -->
+                    <div class="o-layout__item">
+                        <div class="c-card">
+                            <div class="c-card__icon">📄</div>
+                            <h4>2ª via de boleto</h4>
+                            <p>Obtenha a segunda via do seu boleto de financiamento, consórcio ou parcelamento de forma rápida e online.</p>
+                            <a href="https://wa.me/5511961461174" class="c-btn c-btn--link" target="_blank" rel="noopener">Solicitar via WhatsApp →</a>
+                        </div>
+                    </div>
+                    <!-- Regularização de parcelas -->
+                    <div class="o-layout__item">
+                        <div class="c-card">
+                            <div class="c-card__icon">🔄</div>
+                            <h4>Regularização de parcelas</h4>
+                            <p>Negocie parcelas em atraso, renegocie débitos e mantenha seu contrato em dia com condições especiais.</p>
+                            <a href="https://wa.me/5511961461174" class="c-btn c-btn--link" target="_blank" rel="noopener">Negociar agora →</a>
+                        </div>
+                    </div>
+                    <!-- Quitação de contrato -->
+                    <div class="o-layout__item">
+                        <div class="c-card">
+                            <div class="c-card__icon">✅</div>
+                            <h4>Quitação de contrato</h4>
+                            <p>Simule o valor para quitar antecipadamente seu financiamento ou consórcio e solicite o boleto de quitação.</p>
+                            <a href="https://wa.me/5511961461174" class="c-btn c-btn--link" target="_blank" rel="noopener">Simular quitação →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Itens mais buscados -->
+        <section class="o-content-section section-alt">
+            <div class="o-page-wrap">
+                <div class="c-section-heading">
+                    <h3>Acesso rápido</h3>
+                    <p>Serviços financeiros mais utilizados</p>
+                </div>
+                <ul class="media-grid">
+                    <li class="media-grid__item"><a href="https://wa.me/5511961461174" class="media-grid__link" target="_blank" rel="noopener"><div class="grid-icon">📑</div><span>2ª via de boleto</span></a></li>
+                    <li class="media-grid__item"><a href="https://wa.me/5511961461174" class="media-grid__link" target="_blank" rel="noopener"><div class="grid-icon">💳</div><span>Regularizar parcelas</span></a></li>
+                    <li class="media-grid__item"><a href="https://wa.me/5511961461174" class="media-grid__link" target="_blank" rel="noopener"><div class="grid-icon">🔓</div><span>Quitar contrato</span></a></li>
+                    <li class="media-grid__item"><a href="https://wa.me/5511961461174" class="media-grid__link" target="_blank" rel="noopener"><div class="grid-icon">📞</div><span>WhatsApp oficial</span></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Segurança e dicas -->
+        <section class="o-content-section">
+            <div class="o-page-wrap">
+                <div class="c-media-teaser">
+                    <div class="c-media-teaser__media">
+                        <img src="https://cms-assets.vwfs.com/is/image/vwfs/Imagem%2010%20-%20home?$xl$&fmt=webp&fit=vfit,1&resMode=sharp2" alt="Dicas de segurança" style="max-height: 260px; width:100%; object-fit:cover;">
+                    </div>
+                    <div class="c-media-teaser__caption">
+                        <span class="c-media-teaser__title">Segurança nas transações</span>
+                        <ul class="media-list">
+                            <li>✅ Boletos sempre pelo nosso portal oficial ou WhatsApp</li>
+                            <li>✅ Desconfie de links recebidos por SMS, e-mail ou redes sociais</li>
+                            <li>✅ Utilize sempre os canais oficiais listados no site</li>
+                        </ul>
+                        <a href="https://wa.me/5511961461174" class="c-btn c-btn--outline-light" style="margin-top: 20px; display: inline-block;" target="_blank" rel="noopener">Fale com a segurança →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Perguntas Frequentes -->
+        <section class="o-content-section section-alt">
+            <div class="o-page-wrap">
+                <div class="c-section-heading">
+                    <h3>Perguntas frequentes</h3>
+                    <p>Esclareça dúvidas sobre parcelas e quitação de contrato</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">Quais as opções para regularizar parcelas em atraso? <span>▼</span></div>
+                        <div class="faq-answer">Oferecemos renegociação de débitos com condições especiais. Entre em contato pelo WhatsApp (11) 96146-1174, simule o valor atualizado e gere o boleto para pagamento.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Como posso quitar meu contrato de forma antecipada? <span>▼</span></div>
+                        <div class="faq-answer">Pelo WhatsApp (11) 96146-1174 você pode solicitar a simulação de quitação antecipada com descontos. Após confirmação, enviamos o boleto de quitação.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Recebi uma notificação suspeita sobre boleto. O que fazer? <span>▼</span></div>
+                        <div class="faq-answer">Nunca clique em links desconhecidos. Entre em contato imediatamente pelo nosso WhatsApp oficial (11) 96146-1174 para verificar a autenticidade da cobrança.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Canais de atendimento - apenas WhatsApp -->
+        <section class="o-content-section">
+            <div class="o-page-wrap">
+                <div class="contact-highlight">
+                    <strong>💬 Canal oficial de atendimento</strong><br>
+                    <div class="whatsapp-number">📱 WhatsApp: (11) 96146-1174</div>
+                    <p style="margin-top: 16px;">Atendimento digital para 2ª via de boletos, regularização de parcelas e quitação de contrato.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé institucional -->
+    <footer class="c-footer">
+        <div class="o-page-wrap">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Institucional</h4>
+                    <ul><li><a href="#">Quem somos</a></li><li><a href="#">Transparência</a></li><li><a href="#">Política de Privacidade</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Serviços</h4>
+                    <ul><li><a href="#">2ª via de boleto</a></li><li><a href="#">Regularizar parcelas</a></li><li><a href="#">Quitação de contrato</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ajuda</h4>
+                    <ul><li><a href="#">Perguntas Frequentes</a></li><li><a href="#">Segurança</a></li><li><a href="#">Canais de Atendimento</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Fale Conosco</h4>
+                    <ul><li><a href="https://wa.me/5511961461174" target="_blank" rel="noopener">WhatsApp Oficial</a></li><li><a href="#">Portal do Cliente</a></li></ul>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <span>© Central de Atendimento – Todos os direitos reservados.</span>
+                <span>Atendimento digital | WhatsApp (11) 96146-1174</span>
+            </div>
+            <div class="divider-light"></div>
+            <p style="font-size: 0.7rem; color:#4b6f8c; text-align:center;">Utilize sempre nossos canais oficiais para emissão de boletos e negociações. Desconfie de e-mails ou mensagens com links suspeitos.</p>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp flutuante -->
+    <a href="https://wa.me/5511961461174" class="whatsapp-float" target="_blank" rel="noopener">
+        💬 Atendimento WhatsApp
+    </a>
+
+    <script>
+        // FAQ accordion functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const questionDiv = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const arrowSpan = questionDiv.querySelector('span');
+            questionDiv.addEventListener('click', () => {
+                const isVisible = answer.style.display === 'block';
+                answer.style.display = isVisible ? 'none' : 'block';
+                if(arrowSpan) arrowSpan.innerHTML = isVisible ? '▼' : '▲';
+            });
+        });
+    </script>
+</div>
 </body>
 </html>
