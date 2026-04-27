@@ -18,7 +18,6 @@
             line-height: 1.5;
         }
 
-        /* cores azul institucional */
         :root {
             --primary-dark: #004666;
             --primary-medium: #006494;
@@ -38,7 +37,6 @@
             flex: 1;
         }
 
-        /* skip link */
         .c-skip-link {
             position: absolute;
             top: -40px;
@@ -52,7 +50,6 @@
         }
         .c-skip-link:focus { top: 10px; }
 
-        /* HEADER */
         .c-header {
             background: white;
             border-bottom: 1px solid var(--border-light);
@@ -84,7 +81,6 @@
             font-size: 1.7rem;
         }
 
-        /* hero sem imagem - apenas texto */
         .c-hero-teaser {
             background: linear-gradient(105deg, var(--primary-dark) 0%, #002d42 100%);
             padding: 64px 0;
@@ -132,7 +128,6 @@
             color: var(--primary-dark);
         }
 
-        /* seções */
         .o-content-section {
             padding: 64px 0;
         }
@@ -155,7 +150,6 @@
             font-size: 1.05rem;
         }
 
-        /* cards principais */
         .o-layout {
             display: flex;
             flex-wrap: wrap;
@@ -210,7 +204,6 @@
             background: none;
         }
 
-        /* media teaser dicas segurança */
         .c-media-teaser {
             display: flex;
             flex-wrap: wrap;
@@ -250,7 +243,6 @@
             margin: 8px 0;
         }
 
-        /* grade de atalhos */
         .media-grid {
             display: flex;
             flex-wrap: wrap;
@@ -288,7 +280,6 @@
             color: white;
         }
 
-        /* faq acordeão */
         .faq-container {
             max-width: 900px;
             margin: 0 auto;
@@ -318,7 +309,6 @@
             padding-top: 16px;
         }
 
-        /* contato destaque */
         .contact-highlight {
             background: var(--primary-light);
             border-radius: 28px;
@@ -340,7 +330,6 @@
             margin-top: 12px;
         }
 
-        /* footer */
         .c-footer {
             background: #f3f7fc;
             border-top: 1px solid var(--border-light);
@@ -388,7 +377,6 @@
             .whatsapp-number { font-size: 1.2rem; }
         }
 
-        /* botão flutuante whatsapp */
         .whatsapp-float {
             position: fixed;
             bottom: 24px;
@@ -417,7 +405,6 @@
 <div class="o-root">
     <a href="#conteudo-principal" class="c-skip-link">Ir para o conteúdo principal</a>
 
-    <!-- Header -->
     <header class="c-header">
         <div class="o-page-wrap">
             <div class="header-flex">
@@ -428,7 +415,6 @@
         </div>
     </header>
 
-    <!-- Hero sem imagem - apenas texto centralizado -->
     <section class="c-hero-teaser">
         <div class="o-page-wrap">
             <div class="hero-content">
@@ -441,7 +427,6 @@
 
     <main id="conteudo-principal" class="o-main">
         
-        <!-- Cards principais: 2ª via, Regularização, Quitação -->
         <section class="o-content-section">
             <div class="o-page-wrap">
                 <div class="c-section-heading">
@@ -449,7 +434,6 @@
                     <p>Resolva suas pendências financeiras com agilidade</p>
                 </div>
                 <div class="o-layout">
-                    <!-- 2ª via de boleto -->
                     <div class="o-layout__item">
                         <div class="c-card">
                             <div class="c-card__icon">📄</div>
@@ -458,7 +442,6 @@
                             <a href="https://wa.me/5511961461174" class="c-btn c-btn--link" target="_blank" rel="noopener">Solicitar via WhatsApp →</a>
                         </div>
                     </div>
-                    <!-- Regularização de parcelas -->
                     <div class="o-layout__item">
                         <div class="c-card">
                             <div class="c-card__icon">🔄</div>
@@ -467,7 +450,6 @@
                             <a href="https://wa.me/5511961461174" class="c-btn c-btn--link" target="_blank" rel="noopener">Negociar agora →</a>
                         </div>
                     </div>
-                    <!-- Quitação de contrato -->
                     <div class="o-layout__item">
                         <div class="c-card">
                             <div class="c-card__icon">✅</div>
@@ -480,7 +462,6 @@
             </div>
         </section>
 
-        <!-- Itens mais buscados -->
         <section class="o-content-section section-alt">
             <div class="o-page-wrap">
                 <div class="c-section-heading">
@@ -496,12 +477,12 @@
             </div>
         </section>
 
-        <!-- Segurança e dicas - Imagem tcross2025.jpg -->
+        <!-- Seção com imagem tross2026.jpg -->
         <section class="o-content-section">
             <div class="o-page-wrap">
                 <div class="c-media-teaser">
                     <div class="c-media-teaser__media">
-                        <img src="tcross2025.jpg" alt="Volkswagen T-Cross 2025" style="max-height: 260px; width:100%; object-fit:cover; border-radius:24px;" onerror="this.src='https://placehold.co/600x400/004666/white?text=Imagem+T-Cross'">
+                        <img src="tross2026.jpg" alt="T-Cross 2026" style="max-height: 260px; width:100%; object-fit:cover; border-radius:24px;" onerror="this.onerror=null; this.src='https://placehold.co/600x400/004666/white?text=T-Cross+2026'; this.alt='Imagem não encontrada'">
                     </div>
                     <div class="c-media-teaser__caption">
                         <span class="c-media-teaser__title">Segurança nas transações</span>
@@ -516,7 +497,6 @@
             </div>
         </section>
 
-        <!-- Perguntas Frequentes -->
         <section class="o-content-section section-alt">
             <div class="o-page-wrap">
                 <div class="c-section-heading">
@@ -540,7 +520,6 @@
             </div>
         </section>
 
-        <!-- Canais de atendimento - apenas WhatsApp -->
         <section class="o-content-section">
             <div class="o-page-wrap">
                 <div class="contact-highlight">
@@ -552,7 +531,6 @@
         </section>
     </main>
 
-    <!-- Rodapé institucional -->
     <footer class="c-footer">
         <div class="o-page-wrap">
             <div class="footer-grid">
@@ -582,13 +560,11 @@
         </div>
     </footer>
 
-    <!-- Botão WhatsApp flutuante -->
     <a href="https://wa.me/5511961461174" class="whatsapp-float" target="_blank" rel="noopener">
         💬 Atendimento WhatsApp
     </a>
 
     <script>
-        // FAQ accordion functionality
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             const questionDiv = item.querySelector('.faq-question');
