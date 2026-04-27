@@ -81,12 +81,33 @@
             font-size: 1.7rem;
         }
 
+        /* Hero com imagem de fundo */
         .c-hero-teaser {
-            background: linear-gradient(105deg, var(--primary-dark) 0%, #002d42 100%);
-            padding: 64px 0;
             position: relative;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(105deg, rgba(0,70,102,0.85) 0%, rgba(0,45,66,0.85) 100%);
+            z-index: 1;
         }
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 700px;
             margin: 0 auto;
             text-align: center;
@@ -100,7 +121,7 @@
         }
         .hero-content p {
             font-size: 1.1rem;
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.95);
             margin-bottom: 32px;
         }
         .c-btn {
@@ -371,6 +392,7 @@
         }
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 1.8rem; }
+            .c-hero-teaser { padding: 60px 0; }
             .c-media-teaser { flex-direction: column; padding: 24px; }
             .o-content-section { padding: 48px 0; }
             .media-grid__item { width: 130px; }
@@ -415,7 +437,10 @@
         </div>
     </header>
 
+    <!-- Hero com imagem de fundo tross2026.jpg -->
     <section class="c-hero-teaser">
+        <img src="tross2026.jpg" alt="Fundo T-Cross 2026" class="hero-background" onerror="this.style.display='none'">
+        <div class="hero-overlay"></div>
         <div class="o-page-wrap">
             <div class="hero-content">
                 <h1>Serviços financeiros e regularização de contratos</h1>
@@ -477,12 +502,12 @@
             </div>
         </section>
 
-        <!-- Seção com imagem tross2026.jpg -->
+        <!-- Segurança e dicas -->
         <section class="o-content-section">
             <div class="o-page-wrap">
                 <div class="c-media-teaser">
                     <div class="c-media-teaser__media">
-                        <img src="tross2026.jpg" alt="T-Cross 2026" style="max-height: 260px; width:100%; object-fit:cover; border-radius:24px;" onerror="this.onerror=null; this.src='https://placehold.co/600x400/004666/white?text=T-Cross+2026'; this.alt='Imagem não encontrada'">
+                        <img src="tross2026.jpg" alt="T-Cross 2026" style="max-height: 260px; width:100%; object-fit:cover; border-radius:24px;" onerror="this.onerror=null; this.src='https://placehold.co/600x400/004666/white?text=T-Cross+2026'">
                     </div>
                     <div class="c-media-teaser__caption">
                         <span class="c-media-teaser__title">Segurança nas transações</span>
